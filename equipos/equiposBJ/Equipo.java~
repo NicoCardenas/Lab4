@@ -57,7 +57,7 @@ public class Equipo{
         int res = Integer.MAX_VALUE;
         for (Persona i: personas){
             try{
-                if (i.valorHora() < res) res = i.valorHora();
+                if (i.valorHora() < res) res = i.valorHora();System.out.println(res);
             }catch (EquipoExcepcion e){}
         }
         return res;
