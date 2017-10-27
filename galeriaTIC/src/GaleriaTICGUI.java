@@ -262,8 +262,11 @@ public class GaleriaTICGUI extends JFrame{
     }
     
     private void  accionAdicionar(){
-        coleccion.adicione(textoNombreCorto.getText(),textoNombre.getText(),textoEpoca.getText(), textoProductos.getText(),
+        try{
+            coleccion.adicione(textoNombreCorto.getText(),textoNombre.getText(),textoEpoca.getText(), textoProductos.getText(),
         textoDescripcion.getText());
+        }catch (GaleriaTICExcepcion e){}
+        
     }
 
     private void accionBuscar(){

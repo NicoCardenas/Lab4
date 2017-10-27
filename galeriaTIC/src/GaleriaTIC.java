@@ -64,7 +64,8 @@ public class GaleriaTIC{
     /**
      * Adiciona un nuevo personaje
      */
-    public void adicione(String nombreCorto, String nombre,String epoca, String productos, String descripcion){
+    public void adicione(String nombreCorto, String nombre,String epoca, String productos, String descripcion) throws GaleriaTICExcepcion{
+       if (nombreCorto.length() == 0) throw new GaleriaTICExcepcion(GaleriaTICExcepcion.NOMBRE_CORTO_VACIO);
 	   adicioneInformacion(new Personaje(nombreCorto, nombre, epoca, productos, descripcion));
     }
 
