@@ -69,7 +69,7 @@ public class GaleriaTIC{
 
        int i = 0;
        while(i<personajes.size()){
-           if((personajes.get(i).getNombreCorto()==nombreCorto)&& (personajes.get(i).getNombre()==nombre) && (personajes.get(i).getEpoca()==epoca) && (personajes.get(i).getProductos()==productos) &&(personajes.get(i).getDescripcion()==descripcion)) throw new GaleriaTICExcepcion(GaleriaTICExcepcion.PERSONAJE_YA_EXISTENTE);
+           if((nombreCorto.equals(personajes.get(i).getNombreCorto()))&&(nombre.equals(personajes.get(i).getNombre()))&&(epoca.equals(personajes.get(i).getEpoca()))&&(productos.equals(personajes.get(i).getProductos()))&&(descripcion.equals(personajes.get(i).getDescripcion()))) throw new GaleriaTICExcepcion(GaleriaTICExcepcion.PERSONAJE_YA_EXISTENTE);
      i++;
     }
 	   adicioneInformacion(new Personaje(nombreCorto, nombre, epoca, productos, descripcion));
