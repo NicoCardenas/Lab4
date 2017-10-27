@@ -66,6 +66,12 @@ public class GaleriaTIC{
      */
     public void adicione(String nombreCorto, String nombre,String epoca, String productos, String descripcion) throws GaleriaTICExcepcion{
        if (nombreCorto.length() == 0) throw new GaleriaTICExcepcion(GaleriaTICExcepcion.NOMBRE_CORTO_VACIO);
+
+       int i = 0;
+       while(i<personajes.size()){
+           if((personajes.get(i).getNombreCorto()==nombreCorto)&& (personajes.get(i).getNombre()==nombre) && (personajes.get(i).getEpoca()==epoca) && (personajes.get(i).getProductos()==productos) &&(personajes.get(i).getDescripcion()==descripcion)) throw new GaleriaTICExcepcion(GaleriaTICExcepcion.PERSONAJE_YA_EXISTENTE);
+     i++;
+    }
 	   adicioneInformacion(new Personaje(nombreCorto, nombre, epoca, productos, descripcion));
     }
 
